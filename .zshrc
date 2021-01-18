@@ -7,7 +7,9 @@ export ZSH=/Users/jmoussa/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="pygmalion"
+#ZSH_THEME="awesomepanda"
+#ZSH_THEME="norm"
+ZSH_THEME="tonotdo"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -89,10 +91,46 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 alias zshconfig="nvim ~/.zshrc"
-#alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias tmuxconf="nvim ~/.tmux.conf.local"
+alias tmux="tmux -u"
 alias vim="nvim"
-#
+
+# PROJECTS
+alias rstudio="ssh joe@18.216.38.177"
+alias personalSite="ssh ubuntu@3.209.144.60"
+
+export LC_ALL=en_US.UTF-8 
+export LANG=en_US.UTF-8
+
 export PATH="~/.composer/vendor/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
-alias laravel='~/.composer/vendor/bin/laravel'
+export PATH=${PATH}:/usr/local/mysql/bin/
+export PATH=${PATH}:/Users/jmoussa/Library/Python/3.7/bin/
+export PATH="$PATH:/opt/apache-maven-3.6.2/bin"
+export PATH="$PATH:/opt/apache-tomcat-7.0.96/bin"
 
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/jmoussa/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/jmoussa/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/jmoussa/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/jmoussa/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< end conda initialize <<<
+
+export GOPATH=/Users/jmoussa/projects/golib
+export PATH=$PATH:$GOPATH/bin
+export GOPATH=$GOPATH:/Users/jmoussa/projects/code_go
